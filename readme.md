@@ -1,6 +1,6 @@
 # Tistory Responsive Skin - 123. SchoolLook2
 
-*SchoolLook2 is a skin for Kakao Tistory Blog Service. You can [preview the skin to see what it looks like](http://template2.github.io/html/preview123a.html), or (http://template2.github.io/html/preview123a.html).*
+*SchoolLook2 is a skin for Kakao Tistory Blog Service. You can [preview the skin to see what it looks like](http://template2.github.io/html/preview123a.html), or (http://template2.github.io/html/preview123b.html).*
 
 ![Preview of SchoolLook2](preview.jpg)
 
