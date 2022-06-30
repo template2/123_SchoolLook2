@@ -20,8 +20,8 @@ To Apply the SchoolLook2 skin:
 
 ## Skin option setup
 
-    This skin has more than 90 option items.
-    ![Options of SchoolLook2](options.jpg)
+This skin has more than 90 option items.
+![Options of SchoolLook2](options.jpg)
 
 ## Roadmap
 
