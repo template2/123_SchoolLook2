@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		document.querySelector('#header .search').insertAdjacentElement('afterend',document.querySelector('#content .cover-slider'));
 	}
 
-	//모바일 메뉴 이벤트 버블링 제거하기
+	//모바일 메뉴 이벤트 버블링 제거
 	if(document.querySelector("#dimmed") != null){
 		const events = ["scroll","touchmove","touchend","mousewheel"];
 		for(let i = 0;i < events.length;i++){
