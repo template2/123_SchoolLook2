@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>122 반응형 1단 플러리</name>
+		<version>4.0</version>
+		<description>
+			<![CDATA[ 
+			사이드바가 감추어진 반응형 1단 스킨입니다.
+			메이슨리 라이브러리로 제작된 스킨으로 웹 브라우저 너비에 따라 한 행에 표시되는 아이템 개수가 자동으로 변경됩니다.
+			레이아웃 너비를 자유롭게 조절할 수 있습니다.
+			검색엔진 최적화와 빠른 페이지 로딩 속도를 지원합니다.
+			오프 스크린 이미지 지연 로딩을 지원합니다.
+			60개 이상의 스킨 옵션 설정으로 다양하게 디자인을 변경할 수 있습니다.
+			]]>
+		</description>
+		<license>
+			<![CDATA[ MIT License ]]>
+		</license>
+	</information>
+	<author>
+		<name>112 Responsive Flurry</name>
+		<homepage>https://blogpack.tistory.com</homepage>
+		<email>extflash@gmail.com</email>
+	</author>
+	<default>
+		<entriesOnPage>12</entriesOnPage>
+		<entriesOnList>12</entriesOnList>
+		<recentEntries>5</recentEntries>
+		<recentComments>4</recentComments>
+		<recentTrackbacks>4</recentTrackbacks>
+		<itemsOnGuestbook>10</itemsOnGuestbook>
+		<tagsInCloud>30</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>1</expandComment>
+		<lengthOfRecentNotice>25</lengthOfRecentNotice>
+		<lengthOfRecentEntry>80</lengthOfRecentEntry>
+		<lengthOfRecentComment>30</lengthOfRecentComment>
+		<lengthOfRecentTrackback>30</lengthOfRecentTrackback>
+		<lengthOfLink>30</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<commentMessage>
+			<none>0</none>
+			<single>1</single>
+		</commentMessage>
+		<trackbackMessage>
+			<none>0</none>
+			<single>1</single>
+		</trackbackMessage>
+		<tree>
+			<color>000000</color>
+			<bgColor>ffffff</bgColor>
+			<activeColor>000000</activeColor>
+			<activeBgColor>eeeeee</activeBgColor>
+			<labelLength>27</labelLength>
+			<showValue>1</showValue>
+		</tree>
+		<contentWidth>860</contentWidth>
+		<cover>
+		<![CDATA[
+		[
+			{
+				"name": "cover-list",
+				"title": "",
+				"dataType": "RECENT",
+				"data": {
+					"category": "ALL",
+					"size": "8"
+				}
+			}
+		]
+		]]>
+		</cover>
+	</default>
+	<cover>
+		<item>
+			<name>cover-list</name>
+			<label><![CDATA[ 리스트 ]]></label>
+			<description><![CDATA[ 글목록과 같은 디자인으로 메인에 노출하고 싶은 글을 편집해서 보여주는 리스트입니다. 기본 설정은 최근글 8개 표시입니다. ]]></description>
+		</item>
+	</cover>
+	<variables>
+		<variablegroup name="검색최적화(SEO)">
+			<variable>
+				<name>seo-naver</name>
+				<label><![CDATA[ 네이버 검색 메타 태그 ]]></label>
+				<type>STRING</type>
+				<option />
+				<default></default>
+				<description><![CDATA[ 네이버 검색 메타 태그 키를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>seo-google</name>
+				<label><![CDATA[ 구글 검색 메타 태그 ]]></label>
+				<type>STRING</type>
+				<option />
+				<default></default>
+				<description><![CDATA[ 구글 검색 메타 태그 키를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>seo-bing</name>
+				<label><![CDATA[ MS 빙 검색 메타 태그 ]]></label>
+				<type>STRING</type>
+				<option />
+				<default></default>
+				<description><![CDATA[ 마이크로소프트 빙 검색 메타 태그 키를 입력해주세요. ]]></description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="레이아웃">
+			<variable>
+				<name>category-position</name>
+				<label>
+					<![CDATA[ 카테고리 위치 ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"category-bottom","label":"헤더하단","value":"category-bottom"},{"name":"category-side","label":"사이드바","value":"category-side"}]]]></option>
+				<default>category-bottom</default>
+				<description>
+					<![CDATA[ 카테고리 위치를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>header-size</name>
+				<label>
+					<![CDATA[ 헤더/푸터 너비 ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"header100","label":"100%","value":"header100"},{"name":"header768","label":"768px","value":"header768"},{"name":"header860","label":"860px","value":"header860"},{"name":"header960","label":"960px","value":"header960"},{"name":"header1060","label":"1060px","value":"header1060"},{"name":"header1160","label":"1160px","value":"header1160"}]]]></option>
+				<default>header100</default>
+				<description>
+					<![CDATA[ 헤더/푸터 너비를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>content-size</name>
+				<label>
+					<![CDATA[ 바디 너비(헤더/푸터 제외) ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"content100","label":"100%","value":"content100"},{"name":"content768","label":"768px","value":"content768"},{"name":"content860","label":"860px","value":"content860"},{"name":"content960","label":"960px","value":"content960"},{"name":"content1060","label":"1060px","value":"content1060"},{"name":"content1160","label":"1160px","value":"content1160"}]]]></option>
+				<default>content100</default>
+				<description>
+					<![CDATA[ 본문 너비를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>narrow-letter-spacing</name>
+				<label>
+					<![CDATA[ 자간 좁게(-1px) ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 글자 사이 간격을 -1px로 좁게 설정합니다. 시스템 글꼴 사용시 자간을 좁게 설정해서 조금 더 보기 조밀한 글자 화면 배치를 만들 수 있습니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>header-shadow</name>
+				<label>
+					<![CDATA[ 헤더 하단 그림자 효과 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 헤더 영역 하단에 그림자 효과를 적용합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>layout-padding</name>
+				<label>
+					<![CDATA[ 위/아래 여백 15px ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 레이아웃 위/아래에 15px씩 여백을 줍니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>smooth-scrolling</name>
+				<label>
+					<![CDATA[ 부드러운 스크롤(IE, 사파리 미지원) ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 페이지 스크롤 할 때 부드럽게 이동합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>skin-bg-image</name>
+				<label>
+					<![CDATA[ 전체 배경 이미지 사용 ]]>
+				</label>
+				<type>IMAGE</type>
+				<option />
+				<default></default>
+				<description>
+					<![CDATA[ 스킨 전체 배경 이미지를 사용합니다. 이미지를 선택해 업로드 하십시오. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>progressbar</name>
+				<label>
+					<![CDATA[ 스크롤 프로그래스바 표시 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 페이지 스크롤 할 때 스크롤된 정도를 표시해주는 프로그래스 바를 표시합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="색상">
+			<variable>
+				<name>layout-bg-color</name>
+				<label>
+					<![CDATA[ 전체 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#FFFFFF</default>
+				<description>
+					<![CDATA[ 전체 배경색을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>main-bg-color</name>
+				<label>
+					<![CDATA[ 메인 영역 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>TRANSPARENT</default>
+				<description>
+					<![CDATA[ 메인 영역(컨텐츠+사이드바) 배경색을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>header-bg-color</name>
+				<label>
+					<![CDATA[ 헤더 영역 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>TRANSPARENT</default>
+				<description>
+					<![CDATA[ 헤더 영역 배경색을 선택합니다. ]]>
+				</description>
+			</variable>			
+			<variable>
+				<name>content-bg-color</name>
+				<label>
+					<![CDATA[ 컨텐츠 영역 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>TRANSPARENT</default>
+				<description>
+					<![CDATA[ 컨텐츠 영역 배경색을 선택합니다. ]]>
+				</description>
+			</variable>			
+			<variable>
+				<name>sidebar-bg-color</name>
+				<label>
+					<![CDATA[ 사이드바 전체 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#dbe8ec</default>
+				<description>
+					<![CDATA[ 사이드바 영역 배경색을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>sidebar-box-bg-color</name>
+				<label>
+					<![CDATA[ 사이드바 항목 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>TRANSPARENT</default>
+				<description>
+					<![CDATA[ 사이드바 항목 배경색을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>sidebar-title-bg-color</name>
+				<label>
+					<![CDATA[ 사이드바 타이틀 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>TRANSPARENT</default>
+				<description>
+					<![CDATA[ 사이드바 타이틀 배경색을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>sidebar-title-color</name>
+				<label>
+					<![CDATA[ 사이드바 타이틀 색상 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#383838</default>
+				<description>
+					<![CDATA[ 사이드바 타이틀 색상을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>footer-bg-color</name>
+				<label>
+					<![CDATA[ 푸터 영역 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>TRANSPARENT</default>
+				<description>
+					<![CDATA[ 푸터 영역 배경색을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>base-text-color</name>
+				<label>
+					<![CDATA[ 기본 텍스트 색상 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#383838</default>
+				<description>
+					<![CDATA[ 기본 텍스트 색상을 지정합니다. 기본 색상은 검정색입니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>invert-bg-color</name>
+				<label>
+					<![CDATA[ 강조 반전 배경 색상 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#70A2B2</default>
+				<description>
+					<![CDATA[ 강조용 반전 처리 배경 색상을 지정합니다. 기본 색상은 검정색입니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>invert-text-color</name>
+				<label>
+					<![CDATA[ 강조 반전 텍스트 색상 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#FFFFFF</default>
+				<description>
+					<![CDATA[ 강조용 반전 배경을 가진 텍스트의 색상을 지정합니다. 기본 색상은 흰색입니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>highlight-color</name>
+				<label>
+					<![CDATA[ 하이라이트/테마 색상 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#70A2B2</default>
+				<description>
+					<![CDATA[ 기본 테마 포커스 색상 및 마우스 오버 색상을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>title-color</name>
+				<label>
+					<![CDATA[ 블로그 타이틀 색상 선택 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#383838</default>
+				<description>
+					<![CDATA[ 상단 블로그 제목 색상을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>blogmenu-color</name>
+				<label>
+					<![CDATA[ 블로그 메뉴 색상 선택 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#383838</default>
+				<description>
+					<![CDATA[ 블로그 메뉴 색상을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>progressbar-color</name>
+				<label>
+					<![CDATA[ 스크롤 프로그레스바 색상 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#2083A4</default>
+				<description>
+					<![CDATA[ 스크롤 프로그래스 바의 색상을 선택합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="컨텐츠">
+			<variable>
+				<name>corner-round</name>
+				<label>
+					<![CDATA[ 모서리 ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"corner-square","label":"엣지(직각)","value":""},{"name":"corner-round","label":"약간둥글게","value":"corner-round"},{"name":"corner-big-round","label":"더 둥글게","value":"corner-big-round"}]]]></option>
+				<default></default>
+				<description>
+					<![CDATA[ 컨텐츠 영역 모서리를 둥글게 처리합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>short-date</name>
+				<label>
+					<![CDATA[ 짧은 날짜 사용(년월일) ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 기본 년월일시분초 대신 짧은 년월일 표시를 사용합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>view-btn-top</name>
+				<label>
+					<![CDATA[ 탑 스크롤 버튼 사용 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 오른쪽 하단의 스크롤 탑 버튼을 사용합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>use-google-font</name>
+				<label>
+					<![CDATA[ 구글 웹폰트 사용 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 구글 웹폰트 사용. 글꼴타입에서 구글 폰트 사용시 켜야 함. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>font-type</name>
+				<label>
+					<![CDATA[ 글꼴 ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"font-system","label":"시스템 글꼴","value":""},{"name":"font-sans-serif","label":"돋움체(구글 웹폰트 Noto Sans KR)","value":"font-sans-serif"},{"name":"font-serif","label":"바탕체(구글 웹폰트 Noto Serif KR)","value":"font-serif"}]]]></option>
+				<default>font-sans-serif</default>
+				<description>
+					<![CDATA[ 글꼴 타입을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>icon-type</name>
+				<label>
+					<![CDATA[ 아이콘타입 ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"apost","label":"어포스트(가는아이콘)","value":"apost"},{"name":"googlematerial","label":"구글메터리얼(굵은아이콘)","value":"googlematerial"}]]]></option>
+				<default>apost</default>
+				<description>
+					<![CDATA[ 아이콘 타입을 선택합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="헤더">
+			<variable>
+				<name>center-header</name>
+				<label>
+					<![CDATA[ 헤더영역 가운데 정렬 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 블로그 타이틀, 블로그 메뉴를 가운데 정렬합니다. ]]>
+				</description>
+			</variable>		
+			<variable>
+				<name>header-bg-image</name>
+				<label>
+					<![CDATA[ 헤더 배경 이미지 사용 ]]>
+				</label>
+				<type>IMAGE</type>
+				<option />
+				<default></default>
+				<description>
+					<![CDATA[ 헤더 영역 배경 이미지를 사용합니다. 이미지를 선택해 업로드 하십시오. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>logo-image</name>
+				<label>
+					<![CDATA[ 타이틀 대체 이미지 ]]>
+				</label>
+				<type>IMAGE</type>
+				<option />
+				<default></default>
+				<description>
+					<![CDATA[ 블로그 텍스트 타이틀을 대신해 업로드 한 이미지를 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>view-snsicon</name>
+				<label>
+					<![CDATA[ SNS 아이콘 보기 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ SNS 아이콘 표시 여부를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>color-sns</name>
+				<label>
+					<![CDATA[ 컬러 SNS 아이콘 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 컬러 SNS 아이콘 표시 여부를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>newwindow-snslink</name>
+				<label>
+					<![CDATA[ 새창(탭)에 SNS 링크 열기 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 새창(탭)에 SNS 링크 페이지를 엽니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>sns-instagram</name>
+				<label><![CDATA[ Instagram ]]></label>
+				<type>STRING</type>
+				<option />
+				<default>Instagram URL</default>
+				<description><![CDATA[ Instagram URL를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>sns-facebook</name>
+				<label><![CDATA[ Facebook ]]></label>
+				<type>STRING</type>
+				<option />
+				<default>Facebook URL</default>
+				<description><![CDATA[ Facebook URL를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>sns-twitter</name>
+				<label><![CDATA[ Twitter ]]></label>
+				<type>STRING</type>
+				<option />
+				<default>Twitter URL</default>
+				<description><![CDATA[ Twitter URL를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>sns-youtube</name>
+				<label><![CDATA[ Youtube ]]></label>
+				<type>STRING</type>
+				<option />
+				<default>Youtube URL</default>
+				<description><![CDATA[ Youtube URL를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>sns-pinterest</name>
+				<label><![CDATA[ Pinterest ]]></label>
+				<type>STRING</type>
+				<option />
+				<default>Pinterest URL</default>
+				<description><![CDATA[ Pinterest URL를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>sns-email</name>
+				<label><![CDATA[ E-mail(mailto:포함입력) ]]></label>
+				<type>STRING</type>
+				<option />
+				<default>mailto:email@mydomain.com</default>
+				<description><![CDATA[ Email Address 를 입력해주세요. ]]></description>
+			</variable>
+			<variable>
+				<name>show-blog-menu</name>
+				<label>
+					<![CDATA[ 블로그 메뉴 표시 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 헤더 블로그 메뉴를 표시합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="사이드바">
+			<variable>
+				<name>recent-posttype</name>
+				<label>
+					<![CDATA[ 사이드바 최근글, 인기글 썸네일 표시 ]]>
+				</label>
+				<type>BOOL</type>
+				<option/>
+				<default>true</default>
+				<description>
+					<![CDATA[ 사이드바 최근글, 인기글에 썸네일 표시 여부를 선택합니다.  ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>view-profile</name>
+				<label>
+					<![CDATA[ 프로필 표시 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 프로필 정보 표시 여부를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>view-blog-desc</name>
+				<label>
+					<![CDATA[ 블로그 설명 표시(프로필 표시 필수) ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 사이드바 프로필 밑에 블로그 설명을 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>profile-img-size</name>
+				<label>
+					<![CDATA[ 프로필 이미지 크기 ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"mini","label":"미니(인라인)","value":"-mini"},{"name":"small","label":"작게(원형)","value":""},{"name":"middle","label":"중간크기(둥근사각)","value":"-middle"},{"name":"big","label":"크게(사각)","value":"-big"}]]]></option>
+				<default></default>
+				<description>
+					<![CDATA[ 프로필 이미지 크기를 선택합니다. ]]>
+				</description>
+			</variable>		
+			<variable>
+				<name>small-sidebar-tags</name>
+				<label>
+					<![CDATA[ 작은 사이드바 태그 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 사이드바 태그 목록의 글자 크기를 약간 더 작게 합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>g-translate</name>
+				<label>
+					<![CDATA[ 구글 번역 사용(IE 미지원) ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 사이드바 상단에 구글 번역 기능을 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>g-translate-type</name>
+				<label>
+					<![CDATA[ 구글 번역 타입 ]]>
+				</label>
+				<type>SELECT</type>
+				<default></default>
+				<option><![CDATA[[{"name":"g-translate-list","label":"기본 구글 번역 선택","value":"g-translate-list"},{"name":"g-translate-flags","label":"깃발 아이콘(주요언어 9개)","value":"g-translate-flags"}]]]></option>
+				<description>
+					<![CDATA[ 구글 번역 표시 방법을 선택합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="글목록/커버목록">
+			<variable>
+				<name>thumbnail-width</name>
+				<label>
+					<![CDATA[ 썸네일 너비 ]]>
+				</label>
+				<type>SELECT</type>
+				<default>300</default>
+				<option><![CDATA[[{"name":"thumbnail-width-400","label":"400px","value":"400"},{"name":"thumbnail-width-300","label":"300px","value":"300"},{"name":"thumbnail-width-275","label":"275px","value":"275"},{"name":"thumbnail-width-250","label":"250px","value":"250"},{"name":"thumbnail-width-200","label":"200px","value":"200"}]]]></option>
+				<description>
+					<![CDATA[ 글목록 썸네일 크기를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>thumbnail-gutter</name>
+				<label>
+					<![CDATA[ 썸네일 컬럼 여백 ]]>
+				</label>
+				<type>SELECT</type>
+				<default>20</default>
+				<option><![CDATA[[{"name":"thumbnail-gutter-30","label":"30px","value":"30"},{"name":"thumbnail-gutter-20","label":"20px","value":"20"},{"name":"thumbnail-gutter-10","label":"10px","value":"10"},{"name":"thumbnail-gutter-0","label":"0px","value":"0"}]]]></option>
+				<description>
+					<![CDATA[ 글목록 썸네일 컬럼 사이의 여백 크기를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>thumbnail-text-padding</name>
+				<label><![CDATA[ 썸네일 내용 테두리 여백 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 썸네일 내용 주변에 여백 20px를 추가해 인접 썸네일과 내용이 달라붙지 않도록 합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>paging-type</name>
+				<label>
+					<![CDATA[ 페이징 타입 ]]>
+				</label>
+				<type>SELECT</type>
+				<default>pagelist</default>
+				<option><![CDATA[[{"name":"paging-view-more","label":"더보기","value":"paging-view-more"},{"name":"prevnext","label":"이전/다음","value":"prevnext"},{"name":"pagelist","label":"페이지목록","value":"pagelist"}]]]></option>
+				<description>
+					<![CDATA[ 글목록 페이지 이동, 글보기 글 이동시 페이지 이동을 위한 하단 페이징 표시 방법을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>view-thumbnail-excerpt</name>
+				<label><![CDATA[ 글 내용 미리보기 출력 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 글 내용 미리보기를 출력합니다. 끄면 썸네일과 제목만 표시 ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>short-excerpt</name>
+				<label><![CDATA[ 짧은 글 내용 미리보기(4줄 -> 2줄) ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 글 내용 미리보기를 4줄 -> 2줄로 출력합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>view-thumbnail-date</name>
+				<label><![CDATA[ 글 목록 날짜 출력 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 글 목록에 날짜를 표시합니다.  ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>place-thumbnail-holder</name>
+				<label><![CDATA[ 썸네일 이미지 빈 영역 자리 차지 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description><![CDATA[ 썸네일 이미지가 없을 경우 빈 이미지 아이콘 표시와 함께 영역을 차지합니다. ]]></description>
+			</variable>				
+			<variable>
+				<name>fixheight-thumbnail</name>
+				<label><![CDATA[ 썸네일 비율 고정(3:2/1:1) ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 썸네일 이미지 높이를 비율에 맞춰 고정합니다.  ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>square-thumbnail</name>
+				<label><![CDATA[ 정사각 썸네일 사용(비율 고정 옵션 필수) ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 정사각 썸네일 이미지를 사용합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>center-align-thumbnail</name>
+				<label><![CDATA[ 썸네일 내용 가운데 정렬 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 썸네일로 표시되는 내용을 가운데 정렬합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="글 본문 내용">
+			<variable>
+				<name>entry-content-width</name>
+				<label>
+					<![CDATA[ 글 보기 화면 너비 제한 ]]>
+				</label>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"entry-content100","label":"100%","value":"entry-content100"},{"name":"entry-content768","label":"768px","value":"entry-content768"},{"name":"entry-content860","label":"860px","value":"entry-content860"},{"name":"entry-content960","label":"960px","value":"entry-content960"},{"name":"entry-content1060","label":"1060px","value":"entry-content1060"},{"name":"entry-content1160","label":"1160px","value":"entry-content1160"}]]]></option>
+				<default>entry-content960</default>
+				<description>
+					<![CDATA[ 글 보기 화면 너비를 제한합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>center-align-entry</name>
+				<label><![CDATA[ 가운데 정렬 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 글 본문 내용을 가운데 정렬합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>padding-entry</name>
+				<label>
+					<![CDATA[ 내용 텍스트 좌우 여백 ]]>
+				</label>
+				<type>SELECT</type>
+				<default></default>
+				<option><![CDATA[[{"name":"padding-entry0","label":"없음","value":""},{"name":"padding-entry5","label":"5%","value":"padding-entry5"},{"name":"padding-entry10","label":"10%","value":"padding-entry10"},{"name":"padding-entry20","label":"20%","value":"padding-entry20"}]]]></option>
+				<description>
+					<![CDATA[ 글보기 내용 중 텍스트에만 좌우 여백을 추가 합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>force-p-margin</name>
+				<label><![CDATA[ 문단 사이 강제 여백 1.6em 부여 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 글 본문 문단 밑에 1.6em 높이 만큼 강제 여백을 부여합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>copy-content</name>
+				<label><![CDATA[ 글 내용 클립보드 복사 버튼 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 글 제목 옆에 전체 글 내용을 클립보드로 복사하는 버튼을 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>copy-link</name>
+				<label><![CDATA[ 글 URL 태그 복사 버튼 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 글 제목 옆에 글 제목과 함께 하이퍼링크 경로 태그를 클립보드로 복사하는 버튼을 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>toc-enable</name>
+				<label><![CDATA[ 자동 목차 기능 사용 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 글 내용의 목차 스타일을 모아서 자동으로 목차를 생성합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>toc-fold</name>
+				<label><![CDATA[ 하위 자동 목차 접음 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 2, 3뎁스 하위 목차(제목2, 제목3 스타일)를 접어서 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>toc-autonumber</name>
+				<label><![CDATA[ 자동 목차 순번 표시 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 자동 목차에 뎁스별로 순번을 앞에 붙여줍니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>toc-title</name>
+				<label><![CDATA[ 자동 목차에 "목차" 타이틀 표시 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 자동 목차 맨 위에 "목차" 텍스트를 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>toc-depth</name>
+				<label>
+					<![CDATA[ 자동 목차 뎁스 ]]>
+				</label>
+				<type>SELECT</type>
+				<default>toc-level4</default>
+				<option><![CDATA[[{"name":"toc-level2","label":"제목1","value":"toc-level2"},{"name":"toc-level3","label":"제목1,제목2","value":"toc-level3"},{"name":"toc-level4","label":"제목1,제목2,제목3","value":"toc-level4"}]]]></option>
+				<description>
+					<![CDATA[ 자동목차를 생성할 스타일 뎁스를 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>toc-color</name>
+				<label>
+					<![CDATA[ 자동 목차 색상 ]]>
+				</label>
+				<type>COLOR</type>
+				<default>#6bd</default>
+				<option />
+				<description>
+					<![CDATA[ 자동 목차 색상을 선택합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="댓글/방명록">
+			<variable>
+				<name>hide-reply-profileimg</name>
+				<label><![CDATA[ 프로필 아이콘 감춤 ]]></label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 댓글/방명록의 방문자 프로필 이미지를 감춥니다. 페이지 로딩 속도 개선에 도움이 됩니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="푸터">
+			<variable>
+				<name>footer-image</name>
+				<label>
+					<![CDATA[ 푸터에 이미지 표시 ]]>
+				</label>
+				<type>IMAGE</type>
+				<option />
+				<default></default>
+				<description>
+					<![CDATA[  푸터에 업로드한 이미지를 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>footer-text</name>
+				<label>
+					<![CDATA[ 푸터에 텍스트 표시 ]]>
+				</label>
+				<type>STRING</type>
+				<option />
+				<default></default>
+				<description>
+					<![CDATA[ 푸터에 입력한 텍스트를 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>show-admin-menu</name>
+				<label>
+					<![CDATA[ 관리자 메뉴 표시 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 푸터 관리자 메뉴를 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>show-darkmode</name>
+				<label>
+					<![CDATA[ 다크모드 표시 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>true</default>
+				<description>
+					<![CDATA[ 다크모드 토글 버튼을 표시합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>fix-darkmode</name>
+				<label>
+					<![CDATA[ 다크모드 오른쪽 하단 고정 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 다크모드를 오른쪽 하단에 고정 표시합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="데스크탑">
+			<variable>
+				<name>header-category-bg-color</name>
+				<label>
+					<![CDATA[ 헤더 표시 카테고리 배경색 ]]>
+				</label>
+				<type>COLOR</type>
+				<option />
+				<default>#dbe8ec</default>
+				<description>
+					<![CDATA[ 카테고리가 헤더 영역에 표시될 때 배경색을 지정합니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+		<variablegroup name="모바일">
+			<variable>
+				<name>list-type-m</name>
+				<label>
+					<![CDATA[ 모바일 글목록 타입(행당 개수) ]]>
+				</label>
+				<type>SELECT</type>
+				<default>list-type-m-thumbnail2</default>
+				<option><![CDATA[[{"name":"list-type-m-list","label":"목록","value":"list-type-m-list"},{"name":"list-type-m-thumbnail1","label":"썸네일 한행에 1개","value":""},{"name":"list-type-m-thumbnail2","label":"썸네일 한행에 2개","value":"list-type-m-thumbnail2"},{"name":"list-type-m-msnrythumbnail2","label":"썸네일 한행에 2개[메이슨리]","value":"list-type-m-msnrythumbnail2"}]]]></option>
+				<description>
+					<![CDATA[ 모바일 글목록 표시 방법을 선택합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>mobile-menu-padding</name>
+				<label>
+					<![CDATA[ 사이드바 여백 주기 ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 모바일 사이드바 테두리에 여백을 줍니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>mobile-bg-ignore</name>
+				<label>
+					<![CDATA[ 사이드바 배경색 미적용(흰색 강제 적용) ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 사이드바에 적용한 배경 색상을 모바일 사이드바에서는 적용되지 않도록 합니다. ]]>
+				</description>
+			</variable>
+			<variable>
+				<name>mobile-long-excerpt</name>
+				<label>
+					<![CDATA[ 긴 내용 미리보기(4행) ]]>
+				</label>
+				<type>BOOL</type>
+				<option />
+				<default>false</default>
+				<description>
+					<![CDATA[ 2행으로 표시되는 모바일 내용 미리보기를 4행으로 늘립니다. ]]>
+				</description>
+			</variable>
+		</variablegroup>
+	</variables>
+</skin>

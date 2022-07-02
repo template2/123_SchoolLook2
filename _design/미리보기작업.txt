@@ -1,0 +1,6 @@
+1.style.css->previewxxx.css
+2.script.js->previewxxx.js
+3.목록하이퍼링크대체 
+<a (.+ )?href="([^"]+)"([^>]+)?>
+->
+<a \1href="#"\3>
