@@ -201,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		document.body.style.display = 'block';//다크모드 사용할 때 다크모드 CSS 적용 후 표시
 	}else{
 		localStorage.removeItem("darkmode");
+		document.querySelector('.social-link-wrap').classList.add('no-darkmode');
 	}
 
 	//커버 슬라이더 위치 이동

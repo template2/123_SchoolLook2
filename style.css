@@ -348,7 +348,10 @@ main{
 	top: 0;
     right: 100px;
 }
-.social-link {
+.social-link-wrap.no-darkmode {
+    right: 5px;
+}
+	.social-link {
 	height: 45px;
 	padding: 10px;
 	box-sizing: border-box;
