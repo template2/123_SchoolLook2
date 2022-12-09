@@ -1,7 +1,7 @@
 /* -----------------------------------------
 	123 Responsive SchoolLook2 Tistory Skin
-	Version 1.1
-	2022.06.21
+	Version 1.11
+	2022.12.09
 	https://blogpack.tistory.com
 	email: extflash@gmail.com
 	Distributed under MIT License

@@ -1,7 +1,7 @@
 /* -----------------------------------------
 	123 Responsive SchoolLook2 Tistory Skin
-	Version 1.1
-	2022.06.21
+	Version 1.11
+	2022.12.09
 	https://blogpack.tistory.com
 	email: extflash@gmail.com
 	Distributed under MIT License
@@ -182,26 +182,30 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
 
 	//다크모드 토글
-	if(document.querySelector('.darkmode')){
-		if(localStorage.getItem("darkmode") == 'on'){
-			//다크모드 켜기
-			document.body.dataset.darkmode='on';
-			document.querySelector('#toggle-radio-dark').checked = true;
-		}
-		//다크모드 이벤트 핸들러
-		document.querySelector('.darkmode').addEventListener("click", e=>{
-			if(e.target.classList.contains('todark')){
+	if(isLocalStorageAvailable()){	
+		if(document.querySelector('.darkmode')){
+			if(localStorage.getItem("darkmode") == 'on'){
+				//다크모드 켜기
 				document.body.dataset.darkmode='on';
-				localStorage.setItem("darkmode", "on");
-			}else if(e.target.classList.contains('tolight')){
-				document.body.dataset.darkmode='off';
-				localStorage.setItem("darkmode", "off");
+				document.querySelector('#toggle-radio-dark').checked = true;
 			}
-		},false);
-		document.body.style.display = 'block';//다크모드 사용할 때 다크모드 CSS 적용 후 표시
+			//다크모드 이벤트 핸들러
+			document.querySelector('.darkmode').addEventListener("click", e=>{
+				if(e.target.classList.contains('todark')){
+					document.body.dataset.darkmode='on';
+					localStorage.setItem("darkmode", "on");
+				}else if(e.target.classList.contains('tolight')){
+					document.body.dataset.darkmode='off';
+					localStorage.setItem("darkmode", "off");
+				}
+			},false);
+			document.body.style.display = 'block';//다크모드 사용할 때 다크모드 CSS 적용 후 표시
+		}else{
+			localStorage.removeItem("darkmode");
+			document.querySelector('.social-link-wrap').classList.add('no-darkmode');
+		}
 	}else{
-		localStorage.removeItem("darkmode");
-		document.querySelector('.social-link-wrap').classList.add('no-darkmode');
+		document.body.style.display = 'block';
 	}
 
 	//커버 슬라이더 위치 이동
@@ -719,3 +723,15 @@ String.prototype.format = function() {
     }
     return formatted;
 };
+
+//로컬 스토리지 사용 가능 체크
+function isLocalStorageAvailable(){
+    var test = 'test';
+    try {
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}

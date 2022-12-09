@@ -1,7 +1,7 @@
 /* -----------------------------------------
 	123 Responsive SchoolLook2 Tistory Skin
-	Version 1.1
-	2022.06.21
+	Version 1.11
+	2022.12.09
 	https://blogpack.tistory.com
 	email: extflash@gmail.com
 	Distributed under MIT License
@@ -1723,6 +1723,9 @@ body[data-darkmode=on] .mobile-menu:before {
 	margin-bottom: 1.6em;
 	font-size: 0.9375em;
 	line-height: 1.6;
+}
+.entry-content a {
+	text-decoration: underline;
 }
 .force-p-margin .entry-content p {
 	margin-bottom: 1.6em !important;
